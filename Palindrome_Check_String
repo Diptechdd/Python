@@ -1,0 +1,41 @@
+def Palindrome_Check(s):
+    p=len(s)
+    j=p-1
+    rev=""
+    t=True
+    ''' Method 1: Using two pointer technique '''
+    # for i in range(0,p//2):
+    #     if(s[i]!=s[j]):
+    #         print("The given string is not a Palindrome: False")
+    #         t=False
+    #         break
+    #     j=j-1
+    # if(t==True):
+    #     print("The given string is a Palindrome: True")   
+    ''' Method 2: Reversing the string and comparing '''
+    # for i in range(0,p):
+    #     rev=rev+s[j]
+    #     j=j-1               
+    # if(s==rev):
+    #     print("The given string is a Palindrome: True")    
+    # else:
+    #    print("The given string is not a Palindrome: False ") 
+    ''' Method 3: Using Slicing'''
+    # rev=s[::-1]     
+    # if(s==rev):
+    #     print("The given string is a Palindrome: True")    
+    # else:
+    #    print("The given string is not a Palindrome: False ") 
+    ''' Method 4: Using Recursion '''
+    if len(s)<=1: 
+        print("The given string is a Palindrome: True")
+        return
+    if s[0]!=s[-1]:
+        print("The given string is not a Palindrome: False")
+        return 
+    Palindrome_Check(s[1:-1])   
+
+
+
+s=input("Enter a string: ")
+Palindrome_Check(s)      
